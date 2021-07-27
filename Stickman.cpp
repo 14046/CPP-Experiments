@@ -1,3 +1,5 @@
+// The program must be executed at the command-line, following with the word you want to solve as the argument.
+
 #include <iostream>
 #include <string>
 
