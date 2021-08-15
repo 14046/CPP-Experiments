@@ -37,18 +37,6 @@ bool check(const char *word)
     }
 
     node *cursor = table[index];
-    
-/*    do
-    {
-        if (strcasecmp(cursor->word, word) == 0)
-        {
-            return true;
-        }
-        if (cursor->next != NULL)
-        {
-            cursor = cursor->next;
-        }
-    }   while (cursor->next != NULL); */
 
     for (int i = 0; i < N + 1; i++)
     {
