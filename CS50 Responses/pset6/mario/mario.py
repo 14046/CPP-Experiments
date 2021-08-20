@@ -1,6 +1,6 @@
 # Prints out a pyramid from Mario, according to a given height
 
-# get_int required for error-checking input
+# get_int required for input error-checking
 from cs50 import get_int
 
 # Global variables
@@ -12,6 +12,7 @@ spaces = 0
 
 # Runs mario.c recursively
 def recursively(height):
+    
     # Makes global variable 'spaces' visible, and modifiable within function
     global spaces
     
@@ -40,21 +41,17 @@ def recursively(height):
 
 # Runs mario.c iteratively
 def iteratively(height):
+
     # Iterates through entire height of tree
-    for i in range(1, height + 1):
+    for i in range(0, height):
         
-        # Prints empty spaces representing air
         for spaces in range(height - i):
             print(air, end="")
-        # Prints blocks
         for blocks in range(i):
             print(block, end="")
-        # Prints gap
         print(gap, end="")
-        # Prints blocks
         for blocks in range(i):
             print(block, end="")
-        # Prints newline
         print()
 
 
