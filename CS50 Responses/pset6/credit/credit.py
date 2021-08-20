@@ -1,5 +1,7 @@
 # Checks the validity of a credit card with an implementation of Luhn's algorithm, along with additional test checkings
 
+# Regular Expressions module required for string analysis
+# sys module for exitcode functions
 from cs50 import get_int
 import re
 import sys
