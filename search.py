@@ -1,5 +1,4 @@
 import sys
-import timeit
 
 # List of numbers inputted at command-line
 numbers = []
