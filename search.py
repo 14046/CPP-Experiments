@@ -27,17 +27,17 @@ def linear_search(target):
 
 def binary_search(target, number_list):
     # Recursive implementation of binary search
-    number_length = len(number_list) // 2
-    number = number_list[number_length]
-    if number == target:
-        index = numbers.index(number)
+    middle_index = len(number_list) // 2
+    middle_number = number_list[middle_index]
+    if middle_number == target:
+        index = numbers.index(middle_number)
         print(f"{target} is at index {str(index)}")
-    elif number_length == 0:
+    elif middle_index == 0:
         print("That number is not present in the list")
-    elif number < target:
-        binary_search(target, number_list[-number_length:])
-    elif number > target:
-        binary_search(target, number_list[:number_length])
+    elif middle_number < target:
+        binary_search(target, number_list[-middle_index:])
+    elif middle_number > target:
+        binary_search(target, number_list[:middle_index])
         
     
 def main():
