@@ -52,6 +52,9 @@ def bubble_sort(number_list):
 
 
 def populate_list(list):
+    '''Populates list of numbers with numbers taken from
+    command-line arguments, excluding the program name
+    '''    
     for number in sys.argv:
         if sys.argv.index(number) == 0:
             continue
