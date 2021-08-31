@@ -67,7 +67,18 @@ def main():
     numbers = []
     populate_list(numbers)
 
-    numbers = insertion_sort(numbers)
+    while True:
+        choice = input("Choose a sorting algorithm (selection, insertion, bubble): ")
+        if choice.lower() == "selection":
+            numbers = selection_sort(numbers)
+            break
+        elif choice.lower() == "insertion":
+            numbers = insertion_sort(numbers)
+            break
+        elif choice.lower() == "bubble":
+            numbers = bubble_sort(numbers)
+            break
+
     print(numbers)
 
 main()
