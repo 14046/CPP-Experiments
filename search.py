@@ -1,3 +1,4 @@
+'''Program containing several searching algorithms'''
 import sys
 
 # List of numbers inputted at command-line
