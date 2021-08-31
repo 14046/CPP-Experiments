@@ -1,9 +1,10 @@
-'''Program containing several sorting algorithms'''
+# Program containing several sorting algorithms
 import sys
 
 
 def selection_sort(number_list):
     '''An implementation of selection sort -
+
     For every element in a list, looks for the smallest number
     between the i'th and last element, then swaps the two values
     '''
@@ -19,6 +20,7 @@ def selection_sort(number_list):
 
 def insertion_sort(number_list):
     '''An implementation of insertion sort -
+
     Takes the next unsorted number in an array, and inserts it
     into its sorted subarray, beginning at the front of the array
     '''
@@ -36,6 +38,7 @@ def insertion_sort(number_list):
 
 def bubble_sort(number_list):
     '''An implementation of bubble sort -
+
     Every element is compared to its next element and is swapped if
     the first element is less than its following element. This persists 
     unless a pass is made where no swaps have been made, indicating a sorted state
@@ -52,6 +55,13 @@ def bubble_sort(number_list):
 
 
 def merge_sort(number_list):
+    """A recursive implementation of merge sort - 
+
+    For a given array, sorts left side, sorts right side, 
+    merges left and right side into a sorted, conjoined array, and returns it
+
+        :base case: array contains one element
+    """
     if len(number_list) == 1:
         return number_list
     else:
@@ -96,6 +106,7 @@ def main():
     numbers = []
     populate_list(numbers)
 
+    # Prompts user for sorting algorithm, and error-checks
     while True:
         choice = input("Choose a sorting algorithm (selection, insertion, bubble, merge): ")
         if choice.lower() == "selection":
