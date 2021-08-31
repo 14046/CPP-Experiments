@@ -21,19 +21,33 @@ def insertion_sort(number_list):
     Takes the next unsorted number in an array, and inserts it
     into its sorted subarray, beginning at the front of the array
     '''
-    length = len(number_list)
-    for count, number in enumerate(number_list):
-        if count == length - 1:
-            break
-        next_number = number_list[count + 1]
-        if next_number < number:
-            lowest_index = count
-            for count_2, number_2 in reversed(list(enumerate(number_list[:count]))):
+    for index in range(len(number_list) - 1):
+        next_number = number_list[index + 1]
+        if next_number < number_list[index]:
+            lowest_index = index
+            for index_2, number_2 in reversed(list(enumerate(number_list[:index]))):
                 if number_2 < number_list[lowest_index] and number_2 > next_number:
-                    lowest_index = count_2
-            number_list.pop(count + 1)
+                    lowest_index = index_2
+            number_list.pop(index + 1)
             number_list.insert(lowest_index, next_number)
     return number_list
+
+
+def bubble_sort(number_list):
+    '''An implementation of bubble sort -
+    Every element is compared to its next element and is swapped if
+    the first element is less than its following element. This persists 
+    unless a pass is made where no swaps have been made, indicating a sorted state
+    '''
+    length = len(number_list)
+    while True:
+        sorted = True
+        for index in range(length - 1):
+            if number_list[index + 1] < number_list[index]:
+                sorted = False
+                number_list[index], number_list[index + 1] = number_list[index + 1], number_list[index]
+        if sorted == True:
+            return number_list
 
 
 def populate_list(list):
