@@ -51,6 +51,31 @@ def bubble_sort(number_list):
             return number_list
 
 
+def merge_sort(number_list):
+    if len(number_list) == 1:
+        return number_list
+    else:
+        left = merge_sort(number_list[:len(number_list)//2])
+        right = merge_sort(number_list[len(number_list)//2:])
+        conjoined_list = []
+        for number in range(len(left) + len(right)):
+            if len(left) == 0 and len(right) == 0:
+                break
+            elif len(left) == 0:
+                conjoined_list.append(right[0])
+                right.pop(0)
+            elif len(right) == 0:
+                conjoined_list.append(left[0])
+                left.pop(0)               
+            elif left[0] < right[0]:
+                conjoined_list.append(left[0])
+                left.pop(0)
+            else:
+                conjoined_list.append(right[0])
+                right.pop(0)
+        return conjoined_list
+
+
 def populate_list(list):
     '''Populates list of numbers with numbers taken from
     command-line arguments, excluding the program name
@@ -72,7 +97,7 @@ def main():
     populate_list(numbers)
 
     while True:
-        choice = input("Choose a sorting algorithm (selection, insertion, bubble): ")
+        choice = input("Choose a sorting algorithm (selection, insertion, bubble, merge): ")
         if choice.lower() == "selection":
             numbers = selection_sort(numbers)
             break
@@ -81,6 +106,9 @@ def main():
             break
         elif choice.lower() == "bubble":
             numbers = bubble_sort(numbers)
+            break
+        elif choice.lower() == "merge":
+            numbers = merge_sort(numbers)
             break
 
     print(numbers)
