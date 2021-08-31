@@ -36,7 +36,7 @@ def binary_search(target, number_list):
     elif middle_index == 0:
         print("That number is not present in the list")
     elif middle_number < target:
-        binary_search(target, number_list[-middle_index:])
+        binary_search(target, number_list[middle_index:])
     elif middle_number > target:
         binary_search(target, number_list[:middle_index])
         
